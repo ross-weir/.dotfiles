@@ -1,0 +1,39 @@
+[core]
+  editor = nvim
+
+[color]
+  ui = true
+
+[color "diff"]
+  meta = "yellow"
+  frag = "magenta bold"
+  commit = "yellow bold"
+  old = "red bold"
+  new = "green bold"
+  whitespace = "red reverse"
+
+[color "diff-highlight"]
+  oldNormal = "red bold"
+  oldHighlight = "red bold 52"
+  newNormal = "green bold"
+  newHighlight = "green bold 22"
+
+[alias]
+  aa = add .
+  au = add -u
+  br = branch
+  ct = commit
+  co = checkout
+  pu = push
+  pl = pull
+  rb = rebase
+  st = status
+  graph = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
+
+[user]
+  email = 29697678+ross-weir@users.noreply.github.com
+  name = ross-weir
+
+[pager]
+  diff = diff-so-fancy | less --tabs=1,5 -RFX
+  show = diff-so-fancy | less --tabs=1,5 -RFX
