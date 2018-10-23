@@ -8,8 +8,14 @@ function! PackInit() abort
   call minpac#add('junegunn/fzf')
   call minpac#add('junegunn/fzf.vim')
 
+  "" Formatting
+  call minpac#add('tpope/vim-surround')
+  call minpac#add('scrooloose/nerdcommenter')
+
   "" Git
   call minpac#add('tpope/vim-fugitive')
+  "" Enable Gbrowse for GitHub
+  call minpac#add('tpope/vim-rhubarb')
 endfunction
 
 "" Leader key
@@ -39,6 +45,7 @@ au FocusGained * :checktime
 nnoremap <leader>y +y
 vnoremap <leader>y +y
 nnoremap <leader>f :GFiles<CR>
+nnoremap <leader>b :Gbrowse<CR>
 nnoremap <leader>c :Commits<CR>
 nnoremap <leader>l :Lines<CR>
 
