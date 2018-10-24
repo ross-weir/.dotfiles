@@ -421,7 +421,7 @@ assign [class="Code"] $ws4
 assign [class="jetbrains-pycharm"] $ws5
 
 # Start applications
-bindsym $mod+i exec firefox
+bindsym $mod+i exec google-chrome-stable
 bindsym $mod+o exec slack
 bindsym $mod+p exec discord
 bindsym $mod+c exec code
