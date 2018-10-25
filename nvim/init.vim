@@ -8,9 +8,17 @@ function! PackInit() abort
   call minpac#add('junegunn/fzf')
   call minpac#add('junegunn/fzf.vim')
 
+  "" Autocomplete
+  call minpac#add('Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' })
+
   "" Formatting
+  call minpac#add('jiangmiao/auto-pairs')
   call minpac#add('tpope/vim-surround')
   call minpac#add('scrooloose/nerdcommenter')
+
+  "" Python
+  call minpac#add('Vimjas/vim-python-pep8-indent')
+  call minpac#add('ambv/black')
 
   "" Git
   call minpac#add('tpope/vim-fugitive')
@@ -48,12 +56,21 @@ nnoremap <leader>f :GFiles<CR>
 nnoremap <leader>b :Gbrowse<CR>
 nnoremap <leader>c :Commits<CR>
 nnoremap <leader>l :Lines<CR>
+nnoremap <leader>a :Ag<CR>
 
 "" Plugin specific
 
-" FZF
+"" FZF
 let $FZF_DEFAULT_OPTS = ' --no-height'
 let $FZF_DEFAULT_COMMAND = 'fd --type f' 
+
+"" Black
+let g:black_linelength = 100
+"" Format on save
+autocmd BufWritePre *.py execute ':Black'
+
+"" Deoplete
+let g:deoplete#enable_at_startup = 1
 
 command! PackUpdate call PackInit() | call minpac#update('', {'do': 'call minpac#status()'})
 command! PackClean  call PackInit() | call minpac#clean()
