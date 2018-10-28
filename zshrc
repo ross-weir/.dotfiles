@@ -99,5 +99,5 @@ export SSH_KEY_PATH="~/.ssh/rsa_id"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 export WORKON_HOME="$HOME/.virtualenv"
-source $HOME/.local/bin/virtualenvwrapper.sh
+source <(where virtualenvwrapper.sh)
 source $HOME/.aliases
