@@ -16,10 +16,10 @@ alias nv="nvim"
 alias rpyc="find . -name '*.pyc' -delete"
 alias pes="pipenv shell"
 alias ls="ls -lAi --group-directories-first --color='never'"
-alias mbuild=make build-dev
-alias mup=make start-dev
-alias mshell=make bash
-alias mdb=make psql
+alias mbuild="make build-dev"
+alias mup="make start-dev"
+alias mshell="make bash"
+alias mdb="make psql"
 
 # enhancements 
 
