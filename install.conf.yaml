@@ -5,10 +5,6 @@
 - clean: ['~']
 
 - link:
-    ~/.autorandr: autorandr
-    ~/.i3: i3
-    ~/.config/nvim/init.vim: nvim/init.vim
-    ~/.config/termite: termite
     ~/.gitconfig: gitconfig
     ~/.zshrc: zshrc
     ~/.aliases: aliases

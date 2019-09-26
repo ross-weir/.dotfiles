@@ -1,16 +1,8 @@
 mkcd() { mkdir $1;cd $1; }
 findfont() { echo "$(fc-list : family | grep $1 | tail -1)"; }
 cpfile() { xclip -sel clip < $1; }
-pkgbackup() { pacman -Qqe > $HOME/dotfiles/pkglist.txt }
-yaybackup() { yay -Qe > $HOME/dotfiles/yaylist.txt }
 
 alias dc="docker-compose"
-alias dcwwa="docker-compose up -d web worker app"
-alias wk3="workon k3"
-alias pkgdump="pacman -Qqe > $HOME/pkglist.txt"
-alias pkgdumpinstall="pacman -S - < $HOME/pkglist.txt"
-alias pkgbackup=pkgbackup
-alias yaybackup=yaybackup
 alias ..="cd .."
 alias .2="cd ../../"
 alias .3="cd ../../../"
@@ -23,12 +15,13 @@ alias cpfile=cpfile
 alias nv="nvim"
 alias rpyc="find . -name '*.pyc' -delete"
 alias pes="pipenv shell"
-alias ls="ls -lAi --group-directories-first --color='always'"
-alias pdf="evince"
+alias ls="ls -lAi --group-directories-first --color='never'"
+alias mbuild=make build-dev
+alias mup=make start-dev
+alias mshell=echo "todo"
 
 # enhancements 
 
-alias cat=bat
 # performance
 alias top=htop
 alias preview="fzf --preview 'bat --color always {}'"

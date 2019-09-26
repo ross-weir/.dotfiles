@@ -101,3 +101,12 @@ export SSH_KEY_PATH="~/.ssh/rsa_id"
 export WORKON_HOME="$HOME/.virtualenv"
 source <(where virtualenvwrapper.sh)
 source $HOME/.aliases
+
+command_not_found_handler() {
+    if cmd.exe /c "(where $1 || (help $1 |findstr /V Try)) >nul 2>nul && ($* || exit 0)"; then
+        return $?
+    else
+        [[ -x /usr/lib/command-not-found ]] || return 1
+	/usr/lib/command-not-found --no-failure-msg -- ${1+"$1"} && :
+    fi
+}
